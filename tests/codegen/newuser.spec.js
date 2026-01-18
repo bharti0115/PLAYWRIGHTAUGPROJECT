@@ -1,0 +1,50 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+  await page.getByRole('textbox', { name: 'Username' }).click();
+  await page.getByRole('textbox', { name: 'Username' }).fill('Admin');
+  await page.getByRole('textbox', { name: 'Password' }).click();
+  await page.getByRole('textbox', { name: 'Password' }).fill('admin123');
+  await page.getByRole('button', { name: 'Login' }).click();
+  await expect(page.getByText('Time at Work')).toBeVisible({timeout:20000});
+  await expect(page.getByText('My Actions')).toBeVisible();
+  await expect(page.getByText('Quick Launch')).toBeVisible();
+  await expect(page.getByText('Buzz Latest Posts')).toBeVisible();
+  await page.getByRole('link', { name: 'Recruitment' }).click();
+  await page.getByRole('button', { name: ' Add' }).click();
+  await page.getByRole('textbox', { name: 'First Name' }).click();
+  await page.getByRole('textbox', { name: 'First Name' }).fill('Abhishek');
+  await page.getByRole('textbox', { name: 'Middle Name' }).click();
+  await page.getByRole('textbox', { name: 'Middle Name' }).fill('Kumar');
+  await page.getByRole('textbox', { name: 'Last Name' }).click();
+  await page.getByRole('textbox', { name: 'Last Name' }).fill('Bachhan');
+  await page.getByText('-- Select --').click();
+  await page.getByText('Senior QA Lead').click();
+  await page.getByRole('textbox', { name: 'Type here' }).first().click();
+  await page.getByRole('textbox', { name: 'Type here' }).first().fill('abhishek@gmail.com');
+  await page.getByRole('textbox', { name: 'Type here' }).nth(1).click();
+  await page.getByRole('textbox', { name: 'Type here' }).nth(1).fill('9911223355');
+  await page.getByRole('textbox', { name: 'Enter comma seperated words...' }).click();
+  await page.getByRole('textbox', { name: 'Enter comma seperated words...' }).fill('testing,java');
+  await page.locator("//input[@placeholder='mm-dd-yyyy']").click()
+  // await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+  await page.locator('form').getByRole('button', { name: '' }).click();
+  await page.getByText('1', { exact: true }).click();
+  await page.locator('textarea').click();
+  await page.locator('textarea').fill('added by QA');
+  await page.getByRole('button', { name: 'Save' }).click();
+  await expect(page.getByText('Successfully Saved')).toBeVisible();
+  //await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/recruitment/addCandidate/82');
+  await expect(page.getByRole('button', { name: 'Reject' })).toBeVisible({timeout:20000});
+  await expect(page.getByRole('button', { name: 'Shortlist' })).toBeVisible({timeout:20000});
+  await page.getByRole('link', { name: 'Recruitment' }).click();
+  await page.getByRole('row', { name: ' Senior QA Lead Abhishek' }).locator('span i').first().click();
+  await page.getByRole('row', { name: ' Senior QA Lead Abhishek' }).getByRole('button').nth(1).click();
+  await page.getByRole('button', { name: ' Yes, Delete' }).click();
+  await expect(page.getByText('Successfully Deleted')).toBeVisible();
+  await page.locator('span').filter({ hasText: 'Emily Jenson' }).click();
+  await page.getByRole('menuitem', { name: 'Logout' }).click();
+  await expect(page.getByRole('heading', { name: 'Login' })).toBeVisible();
+
+});

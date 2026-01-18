@@ -1,0 +1,14 @@
+<testsuites id="" name="" tests="3" failures="0" skipped="0" errors="0" time="5.9445239999999755">
+<testsuite name="tabs/managetabs.spec.js" timestamp="2025-12-22T12:10:22.174Z" hostname="chromium" tests="1" failures="0" skipped="0" time="3.814" errors="0">
+<testcase name="Manage Tabs" classname="tabs/managetabs.spec.js" time="3.814">
+</testcase>
+</testsuite>
+<testsuite name="tabs/managetabs.spec.js" timestamp="2025-12-22T12:10:22.174Z" hostname="firefox" tests="1" failures="0" skipped="0" time="4.196" errors="0">
+<testcase name="Manage Tabs" classname="tabs/managetabs.spec.js" time="4.196">
+</testcase>
+</testsuite>
+<testsuite name="tabs/managetabs.spec.js" timestamp="2025-12-22T12:10:22.174Z" hostname="webkit" tests="1" failures="0" skipped="0" time="2.78" errors="0">
+<testcase name="Manage Tabs" classname="tabs/managetabs.spec.js" time="2.78">
+</testcase>
+</testsuite>
+</testsuites>

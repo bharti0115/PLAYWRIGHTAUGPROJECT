@@ -1,0 +1,8 @@
+[
+
+  {"id":"TC001","email":"sarika159@gmail.com","password":"password@1234","message":"username is invalid","run":true},
+
+  {"id":"TC002","email":"Bhupendra59@gmail.com","password":"password@1234","message":"password is invalid","run":false}
+
+]
+
